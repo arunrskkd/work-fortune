@@ -29,9 +29,7 @@
           <div class="col-lg-6">
             <div class="sectinside">
               <h2>
-                <span class="orange">Customised</span> &nbsp;
-                <span class="whitebold">Tour Packages</span>
-                <p>Explore Your Favourite Destination In Your Budget </p>
+                <span class="orange">Customised</span>&nbsp;<span class="whitebold">Tour Packages</span><p>Explore Your Favourite Destination In Your Budget </p>
               </h2>
               <span class="spone">
                 <img src="./images/fortunelogo.png" alt="fortune">
@@ -40,6 +38,10 @@
           </div>
         </div>
       </div>
+    </div>
+    <div class="mobbanner d-md-none">
+      <img src="./images/bannerimgmob.jpg" class="w-100">
+
     </div>
     <div class="formsection">
       <div class="insideformsect">
@@ -55,13 +57,19 @@
           </div>
           <div>
             <label for="">Phone*</label>
-            <input type="tel" class="form-control" placeholder="Phone">
+            <input type="tel" class="form-control cphone" placeholder="Phone">
           </div>
           <div>
             <label for="">Destination*</label>
-            <select name="" id="" class="form-control" placeholder="Destination">
-              <option value="">asd</option>
-              <option value="">asd</option>
+            <select name="" id="destination" class="form-control" placeholder="Destination">
+              <option value="">select destination</option>
+              <option value="singapore">Singapore</option>
+              <option value="malaysia">Malaysia</option>
+              <option value="bangkokPattaya">Bangkok / Pattaya</option>
+              <option value="langkawi">LANGKAWI</option>
+              <option value="srilanka">Srilanka</option>
+              <option value="bali">Bali</option>
+              <option value="maldives">Maldives</option>
             </select>
           </div>
           <div>
@@ -115,14 +123,14 @@
     </div>
     <div class="choosedessect">
       <div class="container">
-        <h3 class="heading">Why Plan Your Trip With Fortune Tours?</h3>
+        <h3 class="heading">Choose Your Destination</h3>
         <div class="row">
           <div class="col-lg-4">
             <div class="sectrepeatz">
               <img src="./images/imggalleryonea.jpg">
               <span class="overimg">
                 <h4>Singapore </h4>
-                <button class="btn btntwo">Enquire Now</button>
+                <button class="btn btntwo" proj="singapore">Enquire Now</button>
               </span>
             </div>
           </div>
@@ -131,7 +139,7 @@
               <img src="./images/imggalleryoneb.jpg">
               <span class="overimg">
                 <h4>Malaysia</h4>
-                <button class="btn btntwo">Enquire Now</button>
+                <button class="btn btntwo" proj="malaysia">Enquire Now</button>
               </span>
             </div>
           </div>
@@ -140,7 +148,7 @@
               <img src="./images/imggalleryonec.jpg">
               <span class="overimg">
                 <h4>Bangkok / Pattaya</h4>
-                <button class="btn btntwo">Enquire Now</button>
+                <button class="btn btntwo" proj="bangkokPattaya">Enquire Now</button>
               </span>
             </div>
           </div>
@@ -149,7 +157,7 @@
               <img src="./images/imggalleryoned.jpg">
               <span class="overimg">
                 <h4>LANGKAWI</h4>
-                <button class="btn btntwo">Enquire Now</button>
+                <button class="btn btntwo" proj="langkawi">Enquire Now</button>
               </span>
             </div>
           </div>
@@ -158,7 +166,7 @@
               <img src="./images/imggalleryonee.jpg">
               <span class="overimg">
                 <h4>Srilanka</h4>
-                <button class="btn btntwo">Enquire Now</button>
+                <button class="btn btntwo" proj="srilanka">Enquire Now</button>
               </span>
             </div>
           </div>
@@ -167,7 +175,7 @@
               <img src="./images/imggalleryonef.jpg">
               <span class="overimg">
                 <h4>Bali</h4>
-                <button class="btn btntwo">Enquire Now</button>
+                <button class="btn btntwo" proj="bali">Enquire Now</button>
               </span>
             </div>
           </div>
@@ -176,7 +184,7 @@
               <img src="./images/imggalleryoneg.jpg">
               <span class="overimg">
                 <h4>Maldives</h4>
-                <button class="btn btntwo">Enquire Now</button>
+                <button class="btn btntwo" proj="maldives">Enquire Now</button>
               </span>
             </div>
           </div>
@@ -271,6 +279,17 @@
   <script type="text/javascript" src="js/slick.min.js"></script>
 
   <script>
+    $(document).ready(function(){
+      $('.btntwo').click(function (event) {
+            event.preventDefault();
+            $('html, body').animate({
+              scrollTop: $(".formsection").offset().top
+            }, 1000);
+            $("#destination").val($(this).attr("proj"));
+     });
+
+
+    });
     $('.slidersectone').slick({
       dots: true,
       infinite: true,
@@ -317,25 +336,7 @@
     });
 
 
-    // map function
-    function maping(element) {
-      var latitude = $(element).attr("lat");
-      var longitude = $(element).attr("long");
-      console.log(latitude)
-      console.log(longitude)
-
-
-      initMap(latitude, longitude);
-    }
-
-    //  google maps
-    var map;
-    function initMap(latitude, longitude) {
-      map = new google.maps.Map(document.getElementById('map'), {
-        center: { lat: latitude, lng: longitude },
-        zoom: 8
-      });
-    }
+  
   </script>
 
 </body>

@@ -47,6 +47,16 @@
     img{
         max-width: 100%;
     }
+    button{
+        transition: .5s;
+        &:hover{
+            -webkit-box-shadow: -5px 15px 27px -13px rgba(0,0,0,0.75);
+            -moz-box-shadow: -5px 15px 27px -13px rgba(0,0,0,0.75);
+            box-shadow: -5px 15px 27px -13px rgba(0,0,0,0.75);
+            transition: .5s;
+        }
+    }
+   
     .bannersect{
         background: url('../images/bannerimg.jpg') no-repeat;
         background-size:cover;
@@ -60,12 +70,10 @@
                 font-family:Montserrat-Light;
             }
             .orange{
-                font-size: 40px;
                 color: #ffc041;
                 font-family:Montserrat-Black;
             }
             .whitebold{
-                font-size: 40px;
                 color: #fff;
                 font-family:Montserrat-Black;
             }
@@ -121,16 +129,16 @@
                     background: #009fe7;
                     border-radius:5px;
                     width: 100%;
-                   padding: 14px 0;
+                    padding: 11px 0;
                    border: 0;
                    outline: none !important;
                 }
                 .form-control{
-                    padding: 14px 8px;
+                    padding: 11px 8px;
                     font-size: 15px;
                     color: #000000;
                     outline: none;
-                    height: 53px;
+                    height: 44px;
                 }
             }
         }
@@ -401,6 +409,41 @@
             text-align: center;
         }
        
+    }
+    @media(max-width:768px){
+        .heading {
+            font-size: 26px;
+        }
+        .bannersect .sectinside h2{
+            font-size: 29px;
+            padding: 10px 0;
+        }
+         .bannersect .sectinside .spone{
+            width: 175px;
+        }
+        .exploresect{
+            background-position: 0;
+            padding: 90px 0;
+        }
+        .exploresect h4 {
+            font-size: 27px;
+        }
+        .bannersect{
+            background:#019fe9;
+           
+        }
+        .formsection .insideformsect {
+            margin: 53px auto;
+        }
+        .bannersect .sectinside {
+            padding: 25% 0 5% 0;
+        }
+       .whyplansect {
+            padding: 40px 0;
+        }
+        .customersect .slidersectone p {
+            font-size: 14px;
+        }
     }
 
     
